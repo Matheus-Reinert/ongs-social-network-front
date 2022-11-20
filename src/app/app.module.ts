@@ -12,11 +12,18 @@ import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { TimelineComponent } from './views/timeline/timeline.component';
+import { RouterOutlet } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './views/shared/header/header.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    TimelineComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterOutlet,
+    AppRoutingModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

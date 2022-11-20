@@ -1,0 +1,29 @@
+:host::ng-deep{
+  .p-menubar {
+    padding: 0 0.5rem;
+    background-color: black;
+    color: var(--light-0);
+    border: none;
+    font-size: 0.9rem;
+
+  .p-menuitem {
+    &:first-child{
+      font-weight: bold;
+      padding: 0 1rem;
+    }
+
+    .p-menuitem-link {
+      padding: 0.5rem 0.75rem;
+
+      .p-menuitem-text{
+        color: var(--light-0);
+      }
+    }
+   }
+
+   i {
+    padding: 0 0.75rem;
+   }
+
+  }
+}
