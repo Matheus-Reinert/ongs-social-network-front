@@ -2,6 +2,7 @@ import { LoginComponent } from './views/login/login.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { TimelineComponent } from './views/timeline/timeline.component';
+import { AuthGuard } from './resources/shared/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'timeline', component: TimelineComponent
+    path: 'timeline', component: TimelineComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
