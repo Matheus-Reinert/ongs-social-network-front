@@ -2,9 +2,10 @@
   .p-menubar {
     padding: 0 0.5rem;
     background-color: black;
-    color: var(--light-0);
-    border: none;
+    color: yellow;
+
     font-size: 0.9rem;
+    border:thin solid white;
 
   .p-menuitem {
     &:first-child{
@@ -16,7 +17,7 @@
       padding: 0.5rem 0.75rem;
 
       .p-menuitem-text{
-        color: var(--light-0);
+        color: yellow;
       }
     }
    }

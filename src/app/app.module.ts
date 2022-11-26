@@ -17,13 +17,17 @@ import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './views/shared/header/header.component';
 import { MenubarModule } from 'primeng/menubar';
+import { PublishComponent } from './views/shared/publish/publish.component';
+import { PublicationComponent } from './views/shared/publication/publication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TimelineComponent,
-    HeaderComponent
+    HeaderComponent,
+    PublishComponent,
+    PublicationComponent
   ],
   imports: [
     BrowserModule,
