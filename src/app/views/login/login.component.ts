@@ -1,4 +1,4 @@
-import { LoginService } from './../../resources/services/login.service';
+import { LoginService } from './../../resources/services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { RequestLogin } from 'src/app/resources/models/RequestLogin';
 import { Router } from '@angular/router';
