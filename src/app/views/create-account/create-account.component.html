@@ -1,0 +1,26 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 md:col-6 lg:col-4 sm:flex-nowrap">
+    <p-card>
+      <div class="p-grid">
+        <div class="col-12 text-center">
+          <h2  style="color: yellow;">Helpve</h2>
+        </div>
+        <div class="col-12">
+          <label  style="color: yellow;" for="">Usuário:</label>
+          <input  class="col-12" type="text" placeholder="@" pInputText required="true" />
+         </div>
+         <div class="col-12">
+          <label  style="color: yellow;" for="">Email:</label>
+          <input [(ngModel)]="requestCreateUser.email" class="col-12" type="text" pInputText required="true" />
+         </div>
+         <div class="col-12">
+          <label  style="color: yellow;" for="">Senha:</label>
+          <input  [(ngModel)]="requestCreateUser.password" class="col-12" type="password" pInputText required="true" />
+         </div>
+         <div class="col-12">
+          <button (click)="onSubmit()" pButton type="button" label="Cadastrar" class="col-12" style="color: yellow;"></button>
+         </div>
+        </div>
+    </p-card>
+  </div>
+</div>

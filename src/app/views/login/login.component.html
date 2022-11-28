@@ -3,22 +3,23 @@
     <p-card>
       <div class="p-grid">
         <div class="col-12 text-center">
-          <i class="fa-regular fa-handshake fa-4x" style="color: yellow;"></i>
-          <h2  style="color: yellow;">2GH</h2>
+          <h2  style="color: yellow;">Helpve</h2>
         </div>
          <div class="col-12">
           <label  style="color: yellow;" for="">Usuário:</label>
-          <input [(ngModel)]="requestLogin.email" class="col-12" type="text" pInputText />
+          <input [(ngModel)]="requestLogin.email" class="col-12" type="text" pInputText required="true" (ngModelChange)="verifyIfCanSubmitLogin()"/>
          </div>
          <div class="col-12">
           <label  style="color: yellow;" for="">Senha:</label>
-          <input [(ngModel)]="requestLogin.password" class="col-12" type="password" pInputText />
+          <input [(ngModel)]="requestLogin.password" class="col-12" type="password" pInputText required="true" (ngModelChange)="verifyIfCanSubmitLogin()"/>
          </div>
          <div class="col-12">
-          <button (click)="doLogin()" pButton type="button" label="Entrar" class="col-4"  style="color: yellow;"></button>
-<!--           <button pButton type="button" label="Cadastrar" class="col-4"></button> -->
+          <button (click)="onSubmit()" pButton type="button" label="Entrar" class="col-12" [disabled]="disableSubmitLogin" style="color: yellow;"></button>
          </div>
-      </div>
+         <div class="col-12">
+          <button pButton type="button" label="Cadastrar" class="col-12" [routerLink]="['/create-account']"></button>
+         </div>
+        </div>
     </p-card>
   </div>
 </div>

@@ -19,6 +19,9 @@ import { HeaderComponent } from './views/shared/header/header.component';
 import { MenubarModule } from 'primeng/menubar';
 import { PublishComponent } from './views/shared/publish/publish.component';
 import { PublicationComponent } from './views/shared/publication/publication.component';
+import { CreateAccountComponent } from './views/create-account/create-account.component';
+
+import { httpInterceptorProviders } from './http-interceptors/';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { PublicationComponent } from './views/shared/publication/publication.com
     TimelineComponent,
     HeaderComponent,
     PublishComponent,
-    PublicationComponent
+    PublicationComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +44,12 @@ import { PublicationComponent } from './views/shared/publication/publication.com
     HttpClientModule,
     RouterOutlet,
     AppRoutingModule,
-    MenubarModule
+    MenubarModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
