@@ -3,6 +3,7 @@ import { LoginService } from './../../resources/services/login/login.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RequestLogin } from 'src/app/resources/models/RequestLogin';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   public requestLogin: RequestLogin = new RequestLogin;
-  constructor(private router: Router, private loginService: LoginService, private accountService:AccountService) { }
+  constructor(private router: Router, private loginService: LoginService,
+    private accountService:AccountService, private messageService: MessageService) { }
 
   public disableSubmitLogin: Boolean = true;
 
@@ -28,25 +30,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public doLogin() : void {
-    /* this.loginService.doLogin(this.requestLogin).subscribe(data => {
-      console.log(data)
-    },
-    error => {
-      console.error(error);
-    }) */
-
-    this.router.navigate(["/timeline"]);
-
-  }
-
   async onSubmit() {
     try {
       const result = await this.accountService.login(this.requestLogin);
       console.log(`Login efetuado: ${result}`);
       this.router.navigate(['']);
     } catch (error){
-      console.error(error);
+      this.messageService.add({severity:'error', summary:'Erro', detail:'Email ou Senha inválidos'});
     }
   }
 

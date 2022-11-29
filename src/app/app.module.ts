@@ -6,6 +6,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http'
+import {ToastModule} from 'primeng/toast';
 
 
 
@@ -22,6 +23,7 @@ import { PublicationComponent } from './views/shared/publication/publication.com
 import { CreateAccountComponent } from './views/create-account/create-account.component';
 
 import { httpInterceptorProviders } from './http-interceptors/';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -45,10 +47,11 @@ import { httpInterceptorProviders } from './http-interceptors/';
     RouterOutlet,
     AppRoutingModule,
     MenubarModule,
-    FormsModule
+    FormsModule,
+    ToastModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders, MessageService
   ],
   bootstrap: [AppComponent]
 })
