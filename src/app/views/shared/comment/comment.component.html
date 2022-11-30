@@ -1,0 +1,10 @@
+<p-dialog header="pessoa que fez"[(visible)]="display">
+  <div class="card-body"></div>
+  <p-card *ngFor="let comment of comments">
+    {{comment.name}} {{publicationId}} kk
+  </p-card>
+</p-dialog>
+
+<button type="button" (click)="showDialog()" class="pi pi-comments"></button>
+
+

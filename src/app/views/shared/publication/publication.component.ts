@@ -1,7 +1,7 @@
 import { Post } from './../../../resources/models/Post';
 import { PublicationService } from './../../../resources/services/publication/publication.service';
-import { Component, OnInit } from '@angular/core';
-import { Publication } from 'src/app/resources/models/publication';
+import { Component, Input, OnInit } from '@angular/core';
+import { Publication } from 'src/app/resources/models/Publication';
 
 @Component({
   selector: 'app-publication',
@@ -11,6 +11,7 @@ import { Publication } from 'src/app/resources/models/publication';
 export class PublicationComponent implements OnInit {
 
   publications: Publication[] = [];
+  @Input() publicationId!: any;
 
   constructor(private publicationService: PublicationService) { }
 

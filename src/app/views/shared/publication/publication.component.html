@@ -16,7 +16,8 @@
               <i class="pi pi-thumbs-up"></i> {{publication.likes}}
             </div>
             <div class="comment">
-              <i class="pi pi-comments" (click)="teste()"></i>
+              <app-comment [publicationId] = "publication.id"></app-comment>
+             <!--   <i class="pi pi-comments" (click)="teste()"></i> -->
             </div>
           </div>
           <div class="writeComment">
@@ -27,6 +28,6 @@
       </p-card>
     </div>
   </div>
-  </div>
+</div>
 
 
