@@ -3,11 +3,26 @@
     <div class="card-body" *ngFor="let publication of publications">
       <p-card>
         <ng-template pTemplate="header">
-          {{publication.user.name}} {{publication.user.lastName}}
+          <div class="username">
+            {{publication.user.name}} {{publication.user.lastName}}
+          </div>
         </ng-template>
-          {{publication.text}}
+          <div class="postText">
+            {{publication.text}}
+          </div>
         <ng-template pTemplate="footer">
-          likes : {{publication.likes}}
+          <div class="likeAndComment">
+            <div class="like">
+              <i class="pi pi-thumbs-up"></i> {{publication.likes}}
+            </div>
+            <div class="comment">
+              <i class="pi pi-comments" (click)="teste()"></i>
+            </div>
+          </div>
+          <div class="writeComment">
+            <input class="col-8" type="text" placeholder="Comente algo!"/>
+            <i class="pi pi-chevron-circle-up submitComment" style="font-size: 1rem" pTooltip="Comentar"></i>
+        </div>
         </ng-template>
       </p-card>
     </div>

@@ -20,4 +20,8 @@ export class PublicationComponent implements OnInit {
     });
   }
 
+  teste(){
+    console.log("comentartio")
+  }
+
 }
