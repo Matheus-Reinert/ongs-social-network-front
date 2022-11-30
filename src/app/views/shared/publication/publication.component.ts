@@ -1,4 +1,7 @@
+import { Post } from './../../../resources/models/Post';
+import { PublicationService } from './../../../resources/services/publication/publication.service';
 import { Component, OnInit } from '@angular/core';
+import { Publication } from 'src/app/resources/models/publication';
 
 @Component({
   selector: 'app-publication',
@@ -7,15 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicationComponent implements OnInit {
 
-  comments = [
-    "Teste",
-    "oi, amigos",
-    "O Hexa vem"
-  ]
+  publications: Publication[] = [];
 
-  constructor() { }
+  constructor(private publicationService: PublicationService) { }
 
   ngOnInit(): void {
+    this.publicationService.getPublicationToUser().subscribe((response:Post) => {
+      this.publications = response.posts;
+    });
   }
 
 }

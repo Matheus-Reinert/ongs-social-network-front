@@ -1,15 +1,14 @@
 <div class="grid justify-content-center card">
   <div class="flex flex-column card-container col-8 md:col-6 lg:col-4 sm:flex-nowrap">
-    <div class="card-body" *ngFor="let comment of comments">
+    <div class="card-body" *ngFor="let publication of publications">
       <p-card>
         <ng-template pTemplate="header">
-          Nome @dapessoa
+          {{publication.user.name}} {{publication.user.lastName}}
         </ng-template>
-          {{comment}}
+          {{publication.text}}
         <ng-template pTemplate="footer">
-          Like comment e etc
+          likes : {{publication.likes}}
         </ng-template>
-        <span>{{comment}}</span>
       </p-card>
     </div>
   </div>
