@@ -1,4 +1,4 @@
-import { Publication } from "./publication";
+import { Publication } from "./Publication";
 
 export class Post {
   posts!:Publication[];

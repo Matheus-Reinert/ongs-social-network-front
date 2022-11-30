@@ -7,8 +7,7 @@ import {ButtonModule} from 'primeng/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http'
 import {ToastModule} from 'primeng/toast';
-
-
+import {DialogModule} from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
@@ -24,6 +23,7 @@ import { CreateAccountComponent } from './views/create-account/create-account.co
 
 import { httpInterceptorProviders } from './http-interceptors/';
 import { MessageService } from 'primeng/api';
+import { CommentComponent } from './views/shared/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { MessageService } from 'primeng/api';
     HeaderComponent,
     PublishComponent,
     PublicationComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import { MessageService } from 'primeng/api';
     AppRoutingModule,
     MenubarModule,
     FormsModule,
-    ToastModule
+    ToastModule,
+    DialogModule
   ],
   providers: [
     httpInterceptorProviders, MessageService

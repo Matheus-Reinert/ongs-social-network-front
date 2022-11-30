@@ -1,4 +1,4 @@
-import { UserPerPost } from "./userPerPost";
+import { UserPerPost } from "./UserPerPost";
 
 export class Publication {
   dateTime !: Date;
