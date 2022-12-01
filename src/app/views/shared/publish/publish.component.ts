@@ -12,4 +12,8 @@ export class PublishComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUsername(){
+    return window.localStorage.getItem('username')
+  }
+
 }

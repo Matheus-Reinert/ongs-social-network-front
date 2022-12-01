@@ -16,6 +16,8 @@ export class AccountService {
     const result = await this.http.post<any>(`${environment.api}/login`, user).toPromise();
     if(result){
       window.localStorage.setItem('token', result.token);
+      window.localStorage.setItem('userId', result.user.id)
+      window.localStorage.setItem('username', result.user.username)
       return true;
     }
 
