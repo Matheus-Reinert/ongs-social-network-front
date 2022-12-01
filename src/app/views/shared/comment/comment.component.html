@@ -1,10 +1,23 @@
-<p-dialog header="pessoa que fez"[(visible)]="display">
-  <div class="card-body"></div>
-  <p-card *ngFor="let comment of comments">
-    {{comment.name}} {{publicationId}} kk
-  </p-card>
+<p-dialog header="{{header()}}" [style]="{width: '50vw', color:'red'}" [(visible)]="display">
+  <div class="card-body" *ngFor="let comment of comments">
+    <p-card>
+      <ng-template pTemplate="header">
+        <div class="username">
+          {{comment.user.username}}
+        </div>
+      </ng-template>
+      <div class="postText">
+        {{comment.comment}}
+      </div>
+      <ng-template pTemplate="footer">
+        <div class="likeAndComment">
+          <div class="like">
+            <i class="pi pi-thumbs-up" style="color: yellow;"></i> {{comment.likes}}
+          </div>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
 </p-dialog>
 
-<button type="button" (click)="showDialog()" class="pi pi-comments"></button>
-
-
+<i type="button" (click)="showDialog()" class="pi pi-comments" style="color: yellow; background-color: black;"></i>

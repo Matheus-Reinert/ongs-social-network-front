@@ -11,7 +11,6 @@ import { Publication } from 'src/app/resources/models/Publication';
 export class PublicationComponent implements OnInit {
 
   publications: Publication[] = [];
-  @Input() publicationId!: any;
 
   constructor(private publicationService: PublicationService) { }
 

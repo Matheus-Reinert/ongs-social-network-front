@@ -1,4 +1,7 @@
+import { CommentService } from './../../../resources/services/comment/comment.service';
+import { CommentModel } from './../../../resources/models/comment/CommentResponse';
 import { Component, Input, OnInit } from '@angular/core';
+import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-comment',
@@ -9,21 +12,24 @@ export class CommentComponent implements OnInit {
 
   display: boolean = false;
 
-   comments = [
-    {name: "teste"},
-    {name: "teste2"},
-    {name: "Matheus"}
-  ]
+  comments: CommentModel[] = [];
 
   @Input() publicationId!: number;
+  @Input() parentComment!: string;
 
-  constructor() { }
+  constructor(private commentService :CommentService) { }
 
   ngOnInit(): void {
-    console.log(this.publicationId)
+    this.commentService.getCommentsToPost(this.publicationId).subscribe(response => {
+      this.comments = response;
+    });
   }
 
   showDialog() {
     this.display = true;
+  }
+
+  header(){
+    return this.parentComment
   }
 }
