@@ -16,6 +16,9 @@ O projeto possui as seguintes funcionalidades:
 * Criação de usuários.
 * Criação de comentários.
 
+* Foram criados componentes para:
+Login, criação de usuários, header, publicações, publicar, comentários e visualização de comentários.
+
 # Tecnologia utilizada
 
 ---
@@ -48,5 +51,8 @@ Comentarios
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para utilizar o repositórios, basta fazer clone.
 
+Rodar os comandos `npm install` e `ng serve`.
+
+Navegar até `http://localhost:4200/`. 
