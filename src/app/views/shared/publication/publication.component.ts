@@ -1,7 +1,7 @@
-import { Post } from './../../../resources/models/Post';
+import { Post } from '../../../resources/models/publication/Post';
 import { PublicationService } from './../../../resources/services/publication/publication.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Publication } from 'src/app/resources/models/Publication';
+import { Publication } from 'src/app/resources/models/publication/Publication';
 
 @Component({
   selector: 'app-publication',

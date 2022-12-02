@@ -1,4 +1,4 @@
-import { environment } from './../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jwt_decode from 'jwt-decode';
@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
-export class AccountService {
+export class UserService {
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class AccountService {
     return false;
   }
 
-  async createAccount(account: any) {
+  async createUser(account: any) {
     const result = await this.http.post<any>(`${environment.api}/users`, account).toPromise();
     return result;
   }

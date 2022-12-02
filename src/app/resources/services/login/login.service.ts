@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { RequestLogin } from 'src/app/resources/models/RequestLogin';
+import { RequestLogin } from 'src/app/resources/models/login/RequestLogin';
 import { Injectable } from '@angular/core';
-import { ResponseLogin } from '../../models/ResponseLogin';
+
 import { Observable } from 'rxjs';
+import { ResponseLogin } from '../../models/login/ResponseLogin';
 
 
 @Injectable({

@@ -1,7 +1,7 @@
-import { AccountService } from './../../resources/services/account/account.service';
+import { UserService } from '../../resources/services/user/user.service';
 import { LoginService } from './../../resources/services/login/login.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { RequestLogin } from 'src/app/resources/models/RequestLogin';
+import { RequestLogin } from 'src/app/resources/models/login/RequestLogin';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   public requestLogin: RequestLogin = new RequestLogin;
   constructor(private router: Router, private loginService: LoginService,
-    private accountService:AccountService, private messageService: MessageService) { }
+    private userService:UserService, private messageService: MessageService) { }
 
   public disableSubmitLogin: Boolean = true;
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = await this.accountService.login(this.requestLogin);
+      const result = await this.userService.login(this.requestLogin);
       console.log(`Login efetuado: ${result}`);
       this.router.navigate(['']);
     } catch (error){

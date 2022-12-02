@@ -19,7 +19,7 @@ import { HeaderComponent } from './views/shared/header/header.component';
 import { MenubarModule } from 'primeng/menubar';
 import { PublishComponent } from './views/shared/publish/publish.component';
 import { PublicationComponent } from './views/shared/publication/publication.component';
-import { CreateAccountComponent } from './views/create-account/create-account.component';
+import { CreateAccountComponent } from './views/create-user/create-user.component';
 
 import { httpInterceptorProviders } from './http-interceptors/';
 import { MessageService } from 'primeng/api';

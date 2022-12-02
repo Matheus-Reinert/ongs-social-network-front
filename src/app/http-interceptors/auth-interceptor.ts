@@ -1,19 +1,19 @@
-import { AccountService } from './../resources/services/account/account.service';
+import { UserService } from '../resources/services/user/user.service';
 import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private accountService:AccountService){
+  constructor(private userService:UserService){
 
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler){
-      const token = this.accountService.getAuthorizationToken();
+      const token = this.userService.getAuthorizationToken();
       let request: HttpRequest<any> = req;
 
-      if(token && !this.accountService.isTokenExpired(token)){
+      if(token && !this.userService.isTokenExpired(token)){
         request = req.clone({
           headers: req.headers.set('Authorization', token)
         });
