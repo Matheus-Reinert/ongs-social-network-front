@@ -12,7 +12,7 @@ O projeto possui o Objetivo de conectar pessoas que querem ajudar e entidades qu
 
 O projeto possui as seguintes funcionalidades:
 
-* Login: O login é feito com email e senha, o token e usuário retornado do back-end é armazenado no localStorage
+* Login: O login é feito com email e senha, o token e usuário retornado do back-end é armazenado no localStorage.
 * Criação de usuários.
 * Criação de comentários.
 
@@ -39,6 +39,12 @@ Timeline
 Comentarios 
 
 ![](images/comentarios.png)
+
+# Estrutura de pastas
+
+----
+
+![](images/estruturaDePastas.png)
 
 ## Development server
 
