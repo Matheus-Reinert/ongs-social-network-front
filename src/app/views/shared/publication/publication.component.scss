@@ -15,19 +15,11 @@
 .comment{
   color: white;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .likeAndComment{
+  cursor: pointer;
   display: flex;
-  cursor: pointer;
-}
-
-.writeComment{
-  display: flex-wrap;
-  padding-top: 1rem;
-}
-
-.submitComment{
-  padding-left: 1rem;
-  cursor: pointer;
+  justify-content: center;
 }

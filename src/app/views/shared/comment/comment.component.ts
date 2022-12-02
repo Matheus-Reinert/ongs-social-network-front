@@ -1,3 +1,5 @@
+import { MessageService } from 'primeng/api';
+import { RequestComment } from './../../../resources/models/comment/RequestComment';
 import { CommentService } from './../../../resources/services/comment/comment.service';
 import { CommentModel } from './../../../resources/models/comment/CommentResponse';
 import { Component, Input, OnInit } from '@angular/core';
@@ -12,12 +14,13 @@ export class CommentComponent implements OnInit {
 
   display: boolean = false;
 
+  public requestComment: RequestComment = new RequestComment;
   comments: CommentModel[] = [];
 
   @Input() publicationId!: number;
   @Input() parentComment!: string;
 
-  constructor(private commentService :CommentService) { }
+  constructor(private commentService :CommentService, private messageService:MessageService) { }
 
   ngOnInit(): void {
     this.commentService.getCommentsToPost(this.publicationId).subscribe(response => {
@@ -32,4 +35,9 @@ export class CommentComponent implements OnInit {
   header(){
     return this.parentComment
   }
+
+  saveCommentFromPost() {
+      this.commentService.saveComment(this.requestComment, this.publicationId);
+      this.requestComment.comment = ""
+    }
 }

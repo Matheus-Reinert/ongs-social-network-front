@@ -1,23 +1,32 @@
-<p-dialog header="{{header()}}" [style]="{width: '50vw', color:'red'}" [(visible)]="display">
-  <div class="card-body" *ngFor="let comment of comments">
-    <p-card>
-      <ng-template pTemplate="header">
-        <div class="username">
-          {{comment.user.username}}
-        </div>
-      </ng-template>
-      <div class="postText">
-        {{comment.comment}}
-      </div>
-      <ng-template pTemplate="footer">
-        <div class="likeAndComment">
-          <div class="like">
-            <i class="pi pi-thumbs-up" style="color: yellow;"></i> {{comment.likes}}
+<div class="comment">
+  <p-dialog header="{{header()}}" [style]="{width: '50vw', color:'red'}" [(visible)]="display">
+    <div class="card-body" *ngFor="let comment of comments">
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="username">
+            {{comment.user.username}}
           </div>
+        </ng-template>
+        <div class="postText">
+          {{comment.comment}}
         </div>
-      </ng-template>
-    </p-card>
-  </div>
-</p-dialog>
+        <ng-template pTemplate="footer">
+          <div class="likeAndComment">
+            <div class="like">
+              <i class="pi pi-thumbs-up" style="color: yellow;"></i> {{comment.likes}}
+            </div>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </p-dialog>
 
-<i type="button" (click)="showDialog()" class="pi pi-comments" style="color: yellow; background-color: black;"></i>
+  <i type="button" (click)="showDialog()" class="pi pi-comments" style="color: yellow; background-color: black;"></i>
+
+  <div class="writeComment">
+    <input  onfocus="this.value='';" [(ngModel)]="requestComment.comment"  class="col-8" type="text" placeholder="Comente algo!" />
+    <i (click)="saveCommentFromPost()" class="pi pi-chevron-circle-up submitComment" style="font-size: 1rem; color: yellow;" pTooltip="Comentar"></i>
+  </div>
+
+  <p-toast position="top-right"></p-toast>
+</div>
