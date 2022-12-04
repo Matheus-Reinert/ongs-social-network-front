@@ -7,7 +7,7 @@
         </div>
         <div class="col-12">
           <label  style="color: yellow;" for="">Usuário:</label>
-          <input  class="col-12" type="text" placeholder="@" pInputText required="true" />
+          <input  [(ngModel)]="requestCreateUser.username" class="col-12" type="text" placeholder="@" pInputText required="true" />
          </div>
          <div class="col-12">
           <label  style="color: yellow;" for="">Email:</label>
@@ -20,7 +20,11 @@
          <div class="col-12">
           <button (click)="onSubmit()" pButton type="button" label="Cadastrar" class="col-12" style="color: yellow;"></button>
          </div>
+         <div class="col-12">
+          <button pButton type="button" label="Voltar para Login" class="col-12" [routerLink]="['']"></button>
+         </div>
         </div>
     </p-card>
   </div>
+  <p-toast position="top-right"></p-toast>
 </div>

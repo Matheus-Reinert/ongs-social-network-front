@@ -20,8 +20,9 @@ export class CreateAccountComponent implements OnInit {
   async onSubmit() {
     try {
       const result = await this.userService.createUser(this.requestCreateUser);
-      console.log(result);
-/*       this.router.navigate(['']); */
+      this.requestCreateUser.username = ""
+      this.requestCreateUser.email = ""
+      this.requestCreateUser.password = ""
     } catch (error){
       console.error(error);
     }

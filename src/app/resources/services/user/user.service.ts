@@ -1,7 +1,9 @@
+import { MessageService } from 'primeng/api';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jwt_decode from 'jwt-decode';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -9,7 +11,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private messageService : MessageService, private router: Router) { }
 
 
   async login(user: any) {
@@ -24,9 +26,13 @@ export class UserService {
     return false;
   }
 
-  async createUser(account: any) {
-    const result = await this.http.post<any>(`${environment.api}/users`, account).toPromise();
-    return result;
+  createUser(user: any) {
+    this.http.post<any>(`${environment.api}/users`, user).subscribe( resultado => {
+                this.messageService.add({severity:'success', summary:'Sucesso', detail:'Usuário criado com sucesso!'});
+              }, erro =>{
+                this.messageService.add({severity:'error', summary:'Erro', detail:'Não foi possível criar o usuário'});
+              });
+
   }
 
   getAuthorizationToken(){

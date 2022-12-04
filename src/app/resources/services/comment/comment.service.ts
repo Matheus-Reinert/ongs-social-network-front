@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { RequestComment } from './../../models/comment/RequestComment';
 import { HttpClient } from '@angular/common/http';
@@ -25,9 +26,7 @@ export class CommentService {
               .subscribe( resultado => {
                 this.messageService.add({severity:'success', summary:'Sucesso', detail:'Comentário criado com sucesso!'});
               }, erro =>{
-                this.messageService.add({severity:'error', summary:'Erro', detail:'Não foi possível criar o'});
+                this.messageService.add({severity:'error', summary:'Erro', detail:'Não foi possível criar o comentário'});
               });
-
-
   }
 }
