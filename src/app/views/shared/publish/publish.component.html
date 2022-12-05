@@ -9,7 +9,7 @@
           </div>
 
           <form action="" class="formPost" id="formPost">
-            <textarea name="textarea" id="textarea"></textarea>
+            <textarea [(ngModel)]="requestPublication.text" name="textarea" id="textarea"></textarea>
             <div class="iconsAndButton">
               <div class="icons">
                 <button class="btnFileForm">
@@ -17,11 +17,12 @@
                 </button>
               </div>
 
-              <button type="submit" id="botao" class="btnSubmitForm">Publicar</button>
+              <button (click)="createPublication()" type="submit" id="botao" class="btnSubmitForm">Publicar</button>
             </div>
           </form>
         </div>
 
         <ul class="posts" id="posts"></ul>
 
+        <p-toast position="top-right"></p-toast>
   </div>

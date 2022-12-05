@@ -19,9 +19,4 @@ export class PublicationComponent implements OnInit {
       this.publications = response.posts;
     });
   }
-
-  teste(){
-    console.log("comentartio")
-  }
-
 }
